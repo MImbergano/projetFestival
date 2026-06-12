@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mot de passe oublié | Arts & Traditions</title>
   <link rel="icon" type="image/x-icon" href="/~q250035/EVAL_V3/assets/images/Logo/logo.png">
-  <link rel="stylesheet" href="../../assets/css/new.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
 <body>

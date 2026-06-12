@@ -14,7 +14,7 @@ function obtenirImage($image_db, $type = 'activite') {
 
     // Retourne l'image par défaut selon le contexte
     if ($type === 'artiste') {
-        return 'defaut.png'; // Assurez-vous d'avoir ce fichier
+        return 'defaut.png';
     } else {
         return 'defaut.jpg';
     }

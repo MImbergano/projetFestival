@@ -33,7 +33,7 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accueil | Arts & Traditions</title>
   <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL; ?>/assets/images/Logo/logo.png">
-  <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/new.css"/>
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css"/>
 </head>
 
 <body>

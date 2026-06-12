@@ -1,12 +1,7 @@
 <?php
-// 1. FORCER L'AFFICHAGE DES ERREURS (à enlever après le débug)
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 // 2. CONNEXION ET FONCTIONS
 require_once __DIR__ . '/../../assets/config/db.php';
-require_once __DIR__ . '/../View/fonctions_utiles.php'; // On inclut vos fonctions centralisées
+require_once __DIR__ . '/../View/fonctions_utiles.php';
 
 // 3. RÉCUPÉRATION DE L'ID
 $presta_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -44,7 +39,7 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Détails | <?= htmlspecialchars($p['intitule']) ?></title>
   <link rel="icon" type="image/x-icon" href="/~q250035/EVAL_V3/assets/images/Logo/logo.png">
-  <link rel="stylesheet" href="../../assets/css/new.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 
 <body>

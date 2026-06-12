@@ -77,7 +77,7 @@ $lien_retour = $is_viewer_orga ? "dashboard_organisateur.php" : "dashboard_artis
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modifier Profil - <?php echo htmlspecialchars($affichage_nom); ?></title>
   <link rel="icon" type="image/x-icon" href="/~q250035/EVAL_V3/assets/images/Logo/logo.png">
-    <link rel="stylesheet" href="../../../assets/css/new.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
 <body>
     <?php include('../../View/header.php'); ?>
