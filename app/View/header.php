@@ -1,11 +1,10 @@
 <?php
-// On récupère le nom du fichier actuel
-$current_page = basename($_SERVER['PHP_SELF']);
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+
 if (!defined('BASE_URL')) {
-    define('BASE_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/projetFestival/');
+	define('BASE_URL', '/projetFestival/');
 }
 ?>
-
 <header>
   <nav>
     <div class="logo">

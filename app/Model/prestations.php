@@ -1,9 +1,13 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once __DIR__ . '/../../assets/config/db.php';
 require_once __DIR__ . '/../View/fonctions_utiles.php';
+include('../View/header.php');
 
 // 1. Récupération des données pour les filtres
-$artistesFiltre = $pdo->query("SELECT uid, nom_artiste FROM Utilisateur WHERE est_organisateur = 0 ORDER BY nom_artiste ASC")->fetchAll();
+$artistesFiltre = $pdo->query("SELECT uid, nom_artiste FROM utilisateur WHERE est_organisateur = 0 ORDER BY nom_artiste ASC")->fetchAll();
 $categoriesFiltre = $pdo->query("SELECT cid, intitule FROM categories ORDER BY intitule ASC")->fetchAll();
 
 // 2. Logique des filtres
@@ -30,10 +34,10 @@ if (isset($_GET['PrestationsProgrammerFiltre'])) {
 }
 
 $sql = "SELECT P.*, U.nom_artiste, PR.heure_debut, S.nom_scene
-        FROM Prestation P
-        INNER JOIN Utilisateur U ON P.artiste_id = U.uid
-        LEFT JOIN Programmation PR ON P.pid = PR.prestation_id
-        LEFT JOIN Scene S ON PR.scene_id = S.sid";
+        FROM prestation P
+        INNER JOIN utilisateur U ON P.artiste_id = U.uid
+        LEFT JOIN programmation PR ON P.pid = PR.prestation_id
+        LEFT JOIN scene S ON PR.scene_id = S.sid";
 
 if (!empty($where)) {
     $sql .= " WHERE " . implode(" AND ", $where);
@@ -52,12 +56,12 @@ $prestations = $stmt->fetchAll();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Les prestations | Arts & Traditions</title>
-    <link rel="icon" type="image/x-icon" href="/~q250035/EVAL_V3/assets/images/Logo/logo.png">
+    <link rel="icon" type="image/x-icon" href="/../../assets/images/Logo/logo.png">
     <link rel="stylesheet" href="../../assets/css/style.css" />
 </head>
 
 <body>
-    <?php include('../View/header.php'); ?>
+    
 
     <main>
         <section class="centrage">

@@ -912,6 +912,7 @@ input[type="checkbox"] {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
+  /* Garde les colonnes de taille égale */
 }
 
 .mini-table th,

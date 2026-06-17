@@ -11,16 +11,16 @@ if ($artiste_id === 0) {
 }
 
 try {
-    $stmtArtiste = $pdo->prepare("SELECT nom_artiste, nom, prenom, description, photo FROM Utilisateur WHERE uid = ?");
+    $stmtArtiste = $pdo->prepare("SELECT nom_artiste, nom, prenom, description, photo FROM utilisateur WHERE uid = ?");
     $stmtArtiste->execute([$artiste_id]);
     $artiste = $stmtArtiste->fetch();
 
     if (!$artiste) { die("Artiste introuvable."); }
 
     $sqlPresta = "SELECT P.pid, P.intitule, P.image, PR.heure_debut, S.nom_scene
-                  FROM Prestation P
-                  LEFT JOIN Programmation PR ON P.pid = PR.prestation_id
-                  LEFT JOIN Scene S ON PR.scene_id = S.sid
+                  FROM prestation P
+                  LEFT JOIN programmation PR ON P.pid = PR.prestation_id
+                  LEFT JOIN scene S ON PR.scene_id = S.sid
                   WHERE P.artiste_id = ?";
     $stmtPresta = $pdo->prepare($sqlPresta);
     $stmtPresta->execute([$artiste_id]);
